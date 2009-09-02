@@ -2,7 +2,7 @@
 Name: libxvmc
 Summary:  The XvMC Library
 Version: 1.0.4
-Release: %mkrel 4
+Release: %mkrel 5
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
