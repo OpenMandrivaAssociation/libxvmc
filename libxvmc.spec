@@ -93,6 +93,7 @@ export LIBS="-ldl"
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+rm -f %{buildroot}%_datadir/doc/libXvMC/XvMC_API.txt
 
 %clean
 rm -rf %{buildroot}
