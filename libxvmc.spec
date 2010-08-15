@@ -1,8 +1,8 @@
 %define libxvmc %mklibname xvmc 1
 Name: libxvmc
 Summary:  The XvMC Library
-Version: 1.0.5
-Release: %mkrel 2
+Version: 1.0.6
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
