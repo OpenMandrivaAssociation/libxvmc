@@ -1,8 +1,11 @@
-%define libxvmc %mklibname xvmc 1
+%define libname %mklibname xvmc 1
+%define develname %mklibname xvmc -d
+%define staticname %mklibname xvmc -s -d
+
 Name: libxvmc
 Summary:  The XvMC Library
 Version: 1.0.6
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -20,37 +23,39 @@ The XvMC Library
 
 #-----------------------------------------------------------
 
-%package -n %{libxvmc}
+%package -n %{libname}
 Summary:  The XvMC Library
 Group: Development/X11
 Conflicts: libxorg-x11 < 7.0
 Provides: %{name} = %{version}
 
-%description -n %{libxvmc}
+%description -n %{libname}
 The XvMC Library
 
 #-----------------------------------------------------------
 
-%package -n %{libxvmc}-devel
+%package -n %{develname}
 Summary: Development files for %{name}
 Group: Development/X11
 
-Requires: %{libxvmc} = %{version}
+Requires: %{libname} = %{version}-%{release}
 Requires: libxv-devel >= 1.0.1
 Requires: x11-proto-devel >= 1.0.0
 Provides: libxvmc-devel = %{version}-%{release}
+Provides: libxvmc1-devel = %{version}-%{release}
+Obsoletes: %{mklibname xvmc 1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxvmc}-devel
+%description -n %{develname}
 Development files for %{name}
 
-%pre -n %{libxvmc}-devel
+%pre -n %{develname}
 if [ -h %{_includedir}/X11 ]; then
 	rm -f %{_includedir}/X11
 fi
 
-%files -n %{libxvmc}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/libXvMCW.so
 %{_libdir}/libXvMC.so
@@ -63,18 +68,20 @@ fi
 
 #-----------------------------------------------------------
 
-%package -n %{libxvmc}-static-devel
+%package -n %{staticname}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxvmc}-devel >= %{version}
+Requires: %{develname} >= %{version}-%{release}
 Provides: libxvmc-static-devel = %{version}-%{release}
+Provides: libxvmc1-static-devel = %{version}-%{release}
+Obsoletes: %{mklibname xvmc 1 -s -d}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxvmc}-static-devel
+%description -n %{staticname}
 Static development files for %{name}
 
-%files -n %{libxvmc}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/libXvMCW.a
 %{_libdir}/libXvMC.a
@@ -106,7 +113,7 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 %endif
 
-%files -n %{libxvmc}
+%files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libXvMC.so.1
 %{_libdir}/libXvMC.so.1.0.0
