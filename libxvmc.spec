@@ -5,7 +5,7 @@
 Name: libxvmc
 Summary:  The XvMC Library
 Version: 1.0.6
-Release: 4
+Release: 5
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -58,11 +58,6 @@ export LIBS="-ldl"
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-%pre -n %{develname}
-if [ -h %{_includedir}/X11 ]; then
-	rm -f %{_includedir}/X11
-fi
 
 %files -n %{libname}
 %{_libdir}/libXvMC.so.%{major}*
