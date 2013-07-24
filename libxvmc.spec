@@ -5,8 +5,8 @@
 
 Summary:	The XvMC Library
 Name:		libxvmc
-Version:	1.0.7
-Release:	7
+Version:	1.0.8
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(xproto) >= 1.0.0
 BuildRequires:	pkgconfig(xv) >= 1.0.1
 
 %description
-The XvMC Library
+The XvMC Library.
 
 %package -n %{libname}
 Summary:	The XvMC Library
@@ -27,7 +27,7 @@ Group:		Development/X11
 Provides:	%{name} = %{version}-%{release}
 
 %description -n %{libname}
-The XvMC Library
+The XvMC Library.
 
 %package -n %{libw}
 Summary:	The XvMCW Library
@@ -35,7 +35,7 @@ Group:		Development/X11
 Conflicts:	%{_lib}xvmc1 < 1.0.7-7
 
 %description -n %{libw}
-The XvMCW Library
+The XvMCW Library.
 
 %package -n %{devname}
 Summary:	Development files for %{name}
@@ -45,7 +45,7 @@ Requires:	%{libw} = %{version}-%{release}
 Provides:	libxvmc-devel = %{version}-%{release}
 
 %description -n %{devname}
-Development files for %{name}
+Development files for %{name}.
 
 %prep
 %setup -qn libXvMC-%{version}
