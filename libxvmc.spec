@@ -5,8 +5,8 @@
 
 Summary:	The XvMC Library
 Name:		libxvmc
-Version:	1.0.10
-Release:	3
+Version:	1.0.11
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -48,7 +48,7 @@ Provides:	libxvmc-devel = %{version}-%{release}
 Development files for %{name}.
 
 %prep
-%setup -qn libXvMC-%{version}
+%autosetup -n libXvMC-%{version} -p1
 
 %build
 export LIBS="-ldl"
@@ -58,10 +58,10 @@ export LIBS="-ldl"
 	--x-includes=%{_includedir}\
 	--x-libraries=%{_libdir}
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libXvMC.so.%{major}*
@@ -76,4 +76,3 @@ export LIBS="-ldl"
 %{_includedir}/X11/extensions/XvMClib.h
 %dir %{_docdir}/libXvMC
 %{_docdir}/libXvMC/XvMC_API.txt
-
