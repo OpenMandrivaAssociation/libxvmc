@@ -73,6 +73,6 @@ export LIBS="-ldl"
 %{_libdir}/libXvMCW.so
 %{_libdir}/libXvMC.so
 %{_libdir}/pkgconfig/*.pc
-%{_includedir}/X11/extensions/XvMClib.h
+%{_includedir}/X11/extensions/*.h
 %dir %{_docdir}/libXvMC
 %{_docdir}/libXvMC/XvMC_API.txt
