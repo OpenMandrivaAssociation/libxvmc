@@ -5,7 +5,7 @@
 
 Summary:	The XvMC Library
 Name:		libxvmc
-Version:	1.0.11
+Version:	1.0.12
 Release:	1
 Group:		Development/X11
 License:	MIT
@@ -72,7 +72,7 @@ export LIBS="-ldl"
 %files -n %{devname}
 %{_libdir}/libXvMCW.so
 %{_libdir}/libXvMC.so
-%{_libdir}/pkgconfig/xvmc.pc
+%{_libdir}/pkgconfig/*.pc
 %{_includedir}/X11/extensions/XvMClib.h
 %dir %{_docdir}/libXvMC
 %{_docdir}/libXvMC/XvMC_API.txt
