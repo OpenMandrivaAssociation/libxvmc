@@ -31,6 +31,7 @@ BuildRequires:	pkgconfig(xv) >= 1.0.1
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
 BuildRequires:	devel(libXv)
+BuildRequires:	devel(libxcb)
 %endif
 
 %description
