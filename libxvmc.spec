@@ -11,11 +11,7 @@ Group:		Development/X11
 License:	MIT
 Url:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXvMC-%{version}.tar.xz
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	make
+BuildRequires:	meson
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xext) >= 1.0.0
 BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
@@ -56,12 +52,12 @@ Development files for %{name}.
 %autosetup -n libXvMC-%{version} -p1
 
 %build
-export LIBS="-ldl"
-%configure
-%make_build
+%meson
+
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/libXvMC.so.%{major}*
