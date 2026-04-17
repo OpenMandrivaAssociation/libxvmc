@@ -59,6 +59,9 @@ Development files for %{name}.
 %install
 %meson_install
 
+rm -rf %{buildroot}/%{_libdir}/libXvMC.a
+rm -rf %{buildroot}/%{_libdir}/libXvMCW.a
+
 %files -n %{libname}
 %{_libdir}/libXvMC.so.%{major}*
 
