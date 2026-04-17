@@ -5,7 +5,7 @@
 
 Summary:	The XvMC Library
 Name:		libxvmc
-Version:	1.0.14
+Version:	1.0.15
 Release:	1
 Group:		Development/X11
 License:	MIT
